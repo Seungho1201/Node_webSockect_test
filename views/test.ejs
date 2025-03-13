@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹소켓 테스트</title>
+</head>
+<body>
+    <h1>웹소켓 테스트</h1>
+    <button onclick="sendMessage()">서버로 메시지 보내기</button>
+    
+    <script src="/test.js"></script>
+
+    <script>
+        function sendMessage() {
+            socket.send("데이터 보내보기");
+        }
+    </script>
+</body>
+</html>

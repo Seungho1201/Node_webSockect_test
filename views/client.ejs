@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>웹소켓 테스트</title>
+</head>
+<body>
+    <h2>웹소켓 테스트</h2>
+    <button onclick="sendMessage()">서버에 메시지 보내기</button>
+    <p id="log"></p>
+
+    <script>
+        const socket = new WebSocket("ws://localhost:8080");
+
+        socket.onopen = () => {
+            document.getElementById("log").innerText = "웹소켓 연결 성공";
+        };
+
+        socket.onmessage = (event) => {
+            document.getElementById("log").innerText = "서버 응답: " + event.data;
+        };
+
+        function sendMessage() {
+            socket.send("서버 ㅎㅇㅇ");
+        }
+    </script>
+</body>
+</html>
